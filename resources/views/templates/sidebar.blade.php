@@ -36,15 +36,15 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="/" class="nav-link {{(request()->segment(1) == '') ? 'active' : ''}}">
+                <a href="/pertanyaan" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Tabel</p>
+                  <p>Data Pertanyaan</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="/data-tables" class="nav-link {{(request()->segment(1) == 'data-tables') ? 'active' : ''}}">
+                <a href="/pertanyaan/create" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Data-Tables</p>
+                  <p>Input Pertanyaan</p>
                 </a>
               </li>
             </ul>

@@ -17,8 +17,8 @@ class CreateQuestionsTable extends Migration
             $table->bigIncrements('id_pertanyaan');
             $table->string('judul');
             $table->text('isi');
-            $table->integer('id_komentar');
-            $table->integer('id_react');
+            $table->integer('id_komentar')->nullable();
+            $table->integer('id_react')->nullable();
             $table->timestamps();
         });
     }
