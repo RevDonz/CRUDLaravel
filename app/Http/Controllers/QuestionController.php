@@ -9,7 +9,7 @@ class QuestionController extends Controller
 {
     public function index() {
     	$questions = QuestionModel::get_all();
-    	return view('index', compact('questions'));
+    	return view('questions.index', compact('questions'));
     }
 
 }
