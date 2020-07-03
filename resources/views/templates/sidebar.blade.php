@@ -26,28 +26,21 @@
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
-          <li class="nav-item has-treeview active menu-open">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-tachometer-alt"></i>
+          <li class="nav-item">
+            <a href="/pertanyaan" class="nav-link {{ (request()->segment(2) == '') ? 'active' : '' }}">
+              <i class="nav-icon fas fa-list"></i>
               <p>
-                Dashboard
-                <i class="right fas fa-angle-left"></i>
+                Beranda
               </p>
             </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="/pertanyaan" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Data Pertanyaan</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="/pertanyaan/create" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Input Pertanyaan</p>
-                </a>
-              </li>
-            </ul>
+          </li>
+          <li class="nav-item">
+            <a href="/pertanyaan/create" class="nav-link {{ (request()->segment(2) == 'create') ? 'active' : '' }}">
+              <i class="nav-icon fas fa-plus"></i>
+              <p>
+                Buat Pertanyaan
+              </p>
+            </a>
           </li>
         </ul>
       </nav>
