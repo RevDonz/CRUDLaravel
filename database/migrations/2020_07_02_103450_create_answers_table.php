@@ -16,9 +16,13 @@ class CreateAnswersTable extends Migration
         Schema::create('answers', function (Blueprint $table) {
             $table->bigIncrements('id_jawaban');
             $table->text('isi_jawaban');
-            $table->integer('id_pertanyaan');
+            $table->unsignedBigInteger('pertanyaan_id');
             $table->timestamps();
+            $table->foreign('pertanyaan_id')
+                  ->references('id_pertanyaan')
+                  ->on('questions');
         });
+
     }
 
     /**
