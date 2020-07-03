@@ -17,9 +17,6 @@ class CreateAnswersTable extends Migration
             $table->bigIncrements('id_jawaban');
             $table->text('isi_jawaban');
             $table->integer('id_pertanyaan');
-            $table->integer('id_penjawab');
-            $table->integer('id_komentar');
-            $table->integer('id_react');
             $table->timestamps();
         });
     }
