@@ -25,8 +25,9 @@ class PertanyaanController extends Controller
     	}
     }
 
-    // public function get($id) {
-    //     return view('pertanyaan.detail', );
-    // }
+    public function show($id) {
+        $pertanyaan = PertanyaanModel::getById($id);
+        return view('pertanyaan.detail', compact('pertanyaan'));
+    }
 
 }

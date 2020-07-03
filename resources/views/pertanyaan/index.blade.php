@@ -16,8 +16,8 @@
       	<div class="card-body">
         	<!-- post text -->
         	<p class="h3">
-				{{ $data->judul }}
-          	</p>
+				    {{ $data->judul }}
+          </p>
 
         	<p>
         		{{ $data->isi }}
