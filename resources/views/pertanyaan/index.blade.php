@@ -9,7 +9,7 @@
         	<div class="user-block">
           		<img class="img-circle" src="{{ asset('adminlte/dist/img/user1-128x128.jpg')}}" alt="User Image">
           		<span class="username"><a href="#">Reva Doni Aprilio</a></span>
-          		<span class="description">Shared publicly - 7:30 PM Today</span>
+          		<span class="description">Dibuat pada : <?= date('m/d/y', strtotime($data->created_at)); ?> Diubah pada : <?= date('m/d/y', strtotime($data->updated_at)); ?></span>
         	</div>
       	</div>
 

@@ -17,13 +17,25 @@ class PertanyaanController extends Controller
     	return view('pertanyaan.create');
     }
 
+    // public function store(Request $request) {
+    // 	$data = $request->all();
+    // 	unset($data['_token']);
+    // 	$pertanyaan = PertanyaanModel::save($data);
+    // 	if ($pertanyaan) {
+    // 		return redirect('/pertanyaan');
+    // 	}
+    // }
+
     public function store(Request $request) {
-    	$data = $request->all();
-    	unset($data['_token']);
-    	$pertanyaan = PertanyaanModel::save($data);
-    	if ($pertanyaan) {
-    		return redirect('/pertanyaan');
-    	}
+        $this->validate($request, [
+            'judul' => 'required',
+            'isi' => 'required'
+        ]);
+        $input = $request->all();
+        $hasil = PertanyaanModel::create($input);
+        if ($hasil) {
+            return redirect('/pertanyaan');
+        }
     }
 
     public function show($id) {
