@@ -14,3 +14,4 @@
 Route::get('/pertanyaan', 'PertanyaanController@index');
 Route::get('/pertanyaan/create', 'PertanyaanController@create');
 Route::post('/pertanyaan', 'PertanyaanController@store');
+Route::get('/jawaban/{id_pertanyaan}', 'PertanyaanController@get');

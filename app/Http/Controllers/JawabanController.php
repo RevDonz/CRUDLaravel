@@ -6,5 +6,7 @@ use Illuminate\Http\Request;
 
 class JawabanController extends Controller
 {
-    //
+	public function index(Request $request) {
+
+	}
 }

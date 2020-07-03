@@ -21,10 +21,12 @@ class PertanyaanController extends Controller
     	unset($data['_token']);
     	$pertanyaan = PertanyaanModel::save($data);
     	if ($pertanyaan) {
-    		return view('pertanyaan/index');
-    	} else {
-    		return "salah";
+    		return redirect('/pertanyaan');
     	}
     }
+
+    // public function get($id) {
+    //     return view('pertanyaan.detail', );
+    // }
 
 }
