@@ -48,4 +48,10 @@ class PertanyaanController extends Controller
         return redirect('/pertanyaan');
     }
 
+    public function destroy($id) {
+        $result = PertanyaanModel::where('id_pertanyaan', $id);
+        $status = $result->delete();
+        return redirect('/pertanyaan');
+    }
+
 }

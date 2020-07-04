@@ -11,6 +11,18 @@
           		<span class="username"><a href="#">Reva Doni Aprilio</a></span>
           		<span class="description">Dibuat pada : <?= date('m/d/y', strtotime($data->created_at)); ?> Diubah pada : <?= date('m/d/y', strtotime($data->updated_at)); ?></span>
         	</div>
+          <div class="card-tools">
+          <button type="button" class="btn btn-tool" title="Edit">
+            <a href="/pertanyaan/{{ $data->id_pertanyaan }}/edit"><i class="fas fa-edit"></i></a>
+          </button>
+          <form action="/pertanyaan/{{ $data->id_pertanyaan }}" method="post">
+            @csrf
+            @method('DELETE')
+            <button type="submit" class="btn btn-tool text-danger" title="Delete">
+              <i class="fas fa-trash"></i>
+            </button>
+          </form>
+        </div>
       	</div>
 
       	<div class="card-body">
