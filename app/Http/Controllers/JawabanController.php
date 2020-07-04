@@ -6,7 +6,6 @@ use Illuminate\Http\Request;
 use App\Models\PertanyaanModel;
 use App\Models\JawabanModel;
 
-
 class JawabanController extends Controller
 {
 	public function index($id) {
@@ -16,10 +15,12 @@ class JawabanController extends Controller
 	}
 
 	public function add(Request $request) {
+		$this->validate($request, [
+			'isi_jawaban' => 'required',
+			'pertanyaan_id' => 'required'
+		]);
 		$data = $request->all();
-		unset($data['_token']);
-		$id = $data['pertanyaan_id'];
-		$jawaban = JawabanModel::save($data);
+		$jawaban = JawabanModel::create($data);
 		if ($jawaban) {
 			return redirect()->back();
 		}

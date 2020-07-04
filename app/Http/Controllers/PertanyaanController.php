@@ -17,15 +17,6 @@ class PertanyaanController extends Controller
     	return view('pertanyaan.create');
     }
 
-    // public function store(Request $request) {
-    // 	$data = $request->all();
-    // 	unset($data['_token']);
-    // 	$pertanyaan = PertanyaanModel::save($data);
-    // 	if ($pertanyaan) {
-    // 		return redirect('/pertanyaan');
-    // 	}
-    // }
-
     public function store(Request $request) {
         $this->validate($request, [
             'judul' => 'required',

@@ -36,7 +36,7 @@
           	<div class="comment-text">
             	<span class="username">
               		Maria Gonzales
-              		<span class="text-muted float-right">8:03 PM Today</span>
+              		<span class="text-muted float-right">{{ $jawab->created_at }}</span>
             	</span>
             	{{ $jawab->isi_jawaban }}
           	</div>
