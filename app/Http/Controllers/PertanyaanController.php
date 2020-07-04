@@ -29,9 +29,23 @@ class PertanyaanController extends Controller
         }
     }
 
-    public function show($id) {
+    public function edit($id) {
         $pertanyaan = PertanyaanModel::getById($id);
-        return view('pertanyaan.detail', compact('pertanyaan'));
+        return view('pertanyaan.edit', compact('pertanyaan'));
+    }
+
+    public function update(Request $request, $id) {
+        $this->validate($request, [
+            'judul' => 'required',
+            'isi' => 'required'
+        ]);
+        unset($request["_token"]);
+        unset($request["_method"]);
+        $input = $request->all();
+        $result = PertanyaanModel::where('id_pertanyaan', $id);
+        $result->update($input);
+
+        return redirect('/pertanyaan');
     }
 
 }

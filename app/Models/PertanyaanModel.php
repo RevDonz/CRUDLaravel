@@ -28,5 +28,11 @@ class PertanyaanModel extends Model {
 		return $pertanyaan;
 	}
 
-
+	// public static function update($id, $request) {
+	// 	$pertanyaan = DB::table('questions')->where('id', $id)->update([
+	// 		'judul' => $request["judul"],
+	// 		'isi' => $request["isi"]
+	// 	]);
+	// 	return $pertanyaan;
+	// }
 }
