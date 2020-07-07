@@ -10,6 +10,9 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/', function() {
+	return view('welcome');
+});
 
 Route::get('/pertanyaan', 'PertanyaanController@index');
 Route::get('/pertanyaan/create', 'PertanyaanController@create');
@@ -23,3 +26,6 @@ Route::post('/jawaban', 'JawabanController@add');
 
 Route::resource('questions', 'QuestionController');
 Route::resource('answers', 'AnswerController');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
