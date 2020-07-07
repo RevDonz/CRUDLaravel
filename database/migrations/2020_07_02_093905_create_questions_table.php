@@ -14,7 +14,7 @@ class CreateQuestionsTable extends Migration
     public function up()
     {
         Schema::create('questions', function (Blueprint $table) {
-            $table->bigIncrements('id_pertanyaan');
+            $table->bigIncrements('id');
             $table->string('judul');
             $table->text('isi');
             $table->timestamps();

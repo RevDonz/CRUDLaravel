@@ -3,7 +3,7 @@
 @section('title', 'Input Pertanyaan')
 @section('content')
 	
-	<form action="/pertanyaan" method="POST">
+	<form action="/questions" method="POST">
 		@csrf
 		<div class="card card-primary">
 			<div class="card-header">

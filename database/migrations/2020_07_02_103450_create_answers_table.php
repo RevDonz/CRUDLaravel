@@ -19,7 +19,7 @@ class CreateAnswersTable extends Migration
             $table->unsignedBigInteger('pertanyaan_id');
             $table->timestamps();
             $table->foreign('pertanyaan_id')
-                  ->references('id_pertanyaan')
+                  ->references('id')
                   ->on('questions')
                   ->onDelete('cascade');
         });

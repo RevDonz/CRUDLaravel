@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Answer;
 use Illuminate\Http\Request;
 
 class AnswerController extends Controller
@@ -13,7 +14,7 @@ class AnswerController extends Controller
      */
     public function index()
     {
-        //
+        // 
     }
 
     /**
@@ -34,7 +35,7 @@ class AnswerController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
     }
 
     /**
@@ -45,7 +46,12 @@ class AnswerController extends Controller
      */
     public function show($id)
     {
-        //
+        $request->validate([
+            'isi_jawaban' => 'required'
+        ]);
+
+        $result = Answer::create($request->all());
+        return redirect()->back();
     }
 
     /**

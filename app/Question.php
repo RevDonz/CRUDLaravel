@@ -4,9 +4,9 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Answer extends Model
+class Question extends Model
 {
     protected $fillable = [
-		'isi_jawaban', 'pertanyaan_id'
-	];
+    	'judul', 'isi'
+    ];
 }

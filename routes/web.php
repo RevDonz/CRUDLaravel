@@ -20,3 +20,6 @@ Route::delete('/pertanyaan/{id}', 'PertanyaanController@destroy');
 
 Route::get('/jawaban/{id}', 'JawabanController@index');
 Route::post('/jawaban', 'JawabanController@add');
+
+Route::resource('questions', 'QuestionController');
+Route::resource('answers', 'AnswerController');

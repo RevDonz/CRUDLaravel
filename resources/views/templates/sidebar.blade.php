@@ -27,7 +27,7 @@
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
           <li class="nav-item">
-            <a href="/pertanyaan" class="nav-link {{ (request()->segment(2) == '') ? 'active' : '' }}">
+            <a href="/questions" class="nav-link {{ (request()->segment(2) == '') ? 'active' : '' }}">
               <i class="nav-icon fas fa-list"></i>
               <p>
                 Beranda
@@ -35,7 +35,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="/pertanyaan/create" class="nav-link {{ (request()->segment(2) == 'create') ? 'active' : '' }}">
+            <a href="/questions/create" class="nav-link {{ (request()->segment(2) == 'create') ? 'active' : '' }}">
               <i class="nav-icon fas fa-plus"></i>
               <p>
                 Buat Pertanyaan

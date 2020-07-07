@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Question;
 use Illuminate\Http\Request;
 
 class QuestionController extends Controller
@@ -13,7 +14,8 @@ class QuestionController extends Controller
      */
     public function index()
     {
-        //
+        $questions = Question::all();
+        return view('pertanyaan.index', compact('questions'));
     }
 
     /**
@@ -23,7 +25,7 @@ class QuestionController extends Controller
      */
     public function create()
     {
-        //
+        return view('pertanyaan.create');
     }
 
     /**
@@ -34,27 +36,34 @@ class QuestionController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $result = Question::create([
+            'judul' => $request->judul,
+            'isi' => $request->isi
+        ]);
+        if ($result) {
+            return redirect()->action('QuestionController@index');
+        }
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Question  $question
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Question $questions)
     {
-        //
+        $answers = Answer::all();
+        return view('pertanyaan.detail', compact('questions', 'answers'));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Question  $question
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Question $question)
     {
         //
     }
@@ -63,10 +72,10 @@ class QuestionController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\Question  $question
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Question $question)
     {
         //
     }
@@ -74,10 +83,10 @@ class QuestionController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\Question  $question
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Question $question)
     {
         //
     }
