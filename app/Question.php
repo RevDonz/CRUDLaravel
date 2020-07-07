@@ -9,4 +9,8 @@ class Question extends Model
     protected $fillable = [
     	'judul', 'isi'
     ];
+
+    public function answer() {
+    	return $this->hasMany('App\Answer');
+    }
 }

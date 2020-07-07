@@ -7,6 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 class Answer extends Model
 {
     protected $fillable = [
-		'isi_jawaban', 'pertanyaan_id'
-	];
+    	'pertanyaan_id', 'isi_jawaban'
+    ];
+
+    public static function getAnswerById($id) {
+		$answer = Answer::where('pertanyaan_id', $id)->get();
+		return $answer;
+	}
 }

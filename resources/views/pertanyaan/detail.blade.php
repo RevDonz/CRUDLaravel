@@ -8,11 +8,11 @@
         <div class="user-block">
           <img class="img-circle" src="{{asset('/adminlte/dist/img/user1-128x128.jpg')}}" alt="User Image">
           <span class="username"><a href="#">Reva Doni Aprilio</a></span>
-          <span class="description">Dibuat pada : {{ $questions->created_at }} | Diubah pada : {{ $questions->updated_at }}</span>
+          <span class="description">Dibuat pada : {{ $question->created_at }} | Diubah pada : {{ $question->updated_at }}</span>
         </div>
         <div class="card-tools">
           <button type="button" class="btn btn-tool" title="Edit">
-            <a href="/questions/{{ $questions->id_pertanyaan }}/edit"><i class="fas fa-edit"></i></a>
+            <a href="/questions/{{ $question->id }}/edit"><i class="fas fa-edit"></i></a>
           </button>
         </div>
 
@@ -21,11 +21,11 @@
       <div class="card-body">
         <!-- post text -->
         <p class="h3">
-			{{ $questions->judul }}
+			{{ $question->judul }}
       	</p>
 
       	<p>
-			{{ $questions->isi }}
+			{{ $question->isi }}
       	</p>
 
         <span class="float-right text-muted">45 likes - 2 comments</span>
@@ -53,7 +53,7 @@
       <div class="card-footer">
         <form action="/answers" method="post">
         	@csrf
-        	<input type="hidden" name="pertanyaan_id" id="pertanyaan_id" value="{{ $questions->id_pertanyaan }}">
+        	<input type="hidden" name="pertanyaan_id" id="pertanyaan_id" value="{{ $question->id }}">
           <img class="img-fluid img-circle img-sm" src="{{asset('/adminlte/dist/img/user1-128x128.jpg')}}" alt="Alt Text">
           <!-- .img-push is used to add margin to elements next to floating images -->
           <div class="img-push row">

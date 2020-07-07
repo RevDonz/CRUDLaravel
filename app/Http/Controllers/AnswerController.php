@@ -14,7 +14,7 @@ class AnswerController extends Controller
      */
     public function index()
     {
-        // 
+        //
     }
 
     /**
@@ -35,32 +35,32 @@ class AnswerController extends Controller
      */
     public function store(Request $request)
     {
-        
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
         $request->validate([
+            'pertanyaan_id' => 'required',
             'isi_jawaban' => 'required'
         ]);
-
         $result = Answer::create($request->all());
         return redirect()->back();
     }
 
     /**
-     * Show the form for editing the specified resource.
+     * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Answer  $answer
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function show(Answer $answer)
+    {
+        //
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  \App\Answer  $answer
+     * @return \Illuminate\Http\Response
+     */
+    public function edit(Answer $answer)
     {
         //
     }
@@ -69,10 +69,10 @@ class AnswerController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\Answer  $answer
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Answer $answer)
     {
         //
     }
@@ -80,10 +80,10 @@ class AnswerController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\Answer  $answer
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Answer $answer)
     {
         //
     }

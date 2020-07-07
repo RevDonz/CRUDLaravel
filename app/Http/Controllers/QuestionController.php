@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Question;
+use App\Answer;
 use Illuminate\Http\Request;
 
 class QuestionController extends Controller
@@ -51,10 +52,10 @@ class QuestionController extends Controller
      * @param  \App\Question  $question
      * @return \Illuminate\Http\Response
      */
-    public function show(Question $questions)
+    public function show(Question $question)
     {
-        $answers = Answer::all();
-        return view('pertanyaan.detail', compact('questions', 'answers'));
+        $answers = Answer::getAnswerById($question['id']);
+        return view('pertanyaan.detail', compact('question', 'answers'));
     }
 
     /**

@@ -13,9 +13,9 @@
         </div>
       <div class="card-tools">
         <button type="button" class="btn btn-tool" title="Edit">
-          <a href="/questions/{{ $question->id_pertanyaan }}/edit"><i class="fas fa-edit"></i></a>
+          <a href="/questions/{{ $question->id }}/edit"><i class="fas fa-edit"></i></a>
         </button>
-        <form action="/questions/{{ $question->id_pertanyaan }}" method="post" style="display: inline;">
+        <form action="/questions/{{ $question->id }}" method="post" style="display: inline;">
           @csrf
           @method('DELETE')
           <button type="submit" class="btn btn-tool text-danger" title="Delete">
@@ -39,7 +39,7 @@
   		<button type="button" class="btn btn-default btn-sm">
         <i class="fas fa-comment-alt"></i> Komentar
       </button>
-  		<a href="/questions/{{ $question->id_pertanyaan }}" class="btn btn-default btn-sm"><i class="fas fa-pencil-alt"></i> Jawaban</a>
+  		<a href="/questions/{{ $question->id }}" class="btn btn-default btn-sm"><i class="fas fa-pencil-alt"></i> Jawaban</a>
     </div>
 
   </div>
