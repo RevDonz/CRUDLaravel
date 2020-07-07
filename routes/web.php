@@ -14,18 +14,8 @@ Route::get('/', function() {
 	return view('welcome');
 });
 
-Route::get('/pertanyaan', 'PertanyaanController@index');
-Route::get('/pertanyaan/create', 'PertanyaanController@create');
-Route::post('/pertanyaan', 'PertanyaanController@store');
-Route::get('/pertanyaan/{id}/edit', 'PertanyaanController@edit');
-Route::put('/pertanyaan/{id}', 'PertanyaanController@update');
-Route::delete('/pertanyaan/{id}', 'PertanyaanController@destroy');
-
-Route::get('/jawaban/{id}', 'JawabanController@index');
-Route::post('/jawaban', 'JawabanController@add');
-
 Route::resource('questions', 'QuestionController');
 Route::resource('answers', 'AnswerController');
-Auth::routes();
 
+Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
