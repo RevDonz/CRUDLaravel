@@ -11,7 +11,12 @@ class Answer extends Model
     ];
 
     public static function getAnswerById($id) {
-		$answer = Answer::where('pertanyaan_id', $id)->get();
+		$answer = Answer::join('users', 'user_id', '=', 'users.id')
+		->where('pertanyaan_id', $id)->get();
 		return $answer;
+	}
+
+	public function user() {
+		return $this->belongsTo('App\User');
 	}
 }

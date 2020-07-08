@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Answer;
+use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class AnswerController extends Controller
 {
@@ -37,7 +39,8 @@ class AnswerController extends Controller
     {
         $request->validate([
             'pertanyaan_id' => 'required',
-            'isi_jawaban' => 'required'
+            'isi_jawaban' => 'required',
+            'user_id' => 'Required'
         ]);
         $result = Answer::create($request->all());
         return redirect()->back();
