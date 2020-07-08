@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Answer extends Model
 {
     protected $fillable = [
-    	'pertanyaan_id', 'isi_jawaban'
+    	'pertanyaan_id', 'isi_jawaban', 'user_id'
     ];
 
     public static function getAnswerById($id) {

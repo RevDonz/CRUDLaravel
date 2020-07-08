@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Question;
 use App\Answer;
+use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class QuestionController extends Controller
 {
@@ -13,6 +15,12 @@ class QuestionController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    public function __construct() 
+    {
+        $this->middleware('auth');
+    }
+
     public function index()
     {
         $questions = Question::all();
@@ -39,7 +47,8 @@ class QuestionController extends Controller
     {
         $result = Question::create([
             'judul' => $request->judul,
-            'isi' => $request->isi
+            'isi' => $request->isi,
+            'user_id' => Auth::user()->id
         ]);
         if ($result) {
             return redirect()->action('QuestionController@index');

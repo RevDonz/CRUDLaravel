@@ -14,8 +14,10 @@ Route::get('/', function() {
 	return view('welcome');
 });
 
-Route::resource('questions', 'QuestionController');
-Route::resource('answers', 'AnswerController');
+Route::group(['middleware' => 'auth'], function() {
+	Route::resource('questions', 'QuestionController');
+	Route::resource('answers', 'AnswerController');
+	Route::get('/home', 'HomeController@index')->name('home');
+});
 
 Auth::routes();
-Route::get('/home', 'HomeController@index')->name('home');

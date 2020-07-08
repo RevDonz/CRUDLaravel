@@ -8,7 +8,7 @@
     <div class="card-header">
       <div class="user-block">
           <img class="img-circle" src="{{asset('/adminlte/dist/img/user1-128x128.jpg')}}" alt="User Image">
-          <span class="username"><a href="#">Reva Doni Aprilio</a></span>
+          <span class="username"><a href="#">{{ $question->user->name }}</a></span>
           <span class="description">Dibuat pada : {{ $question->created_at }} | Diubah pada : {{ $question->updated_at }}</span>
         </div>
       <div class="card-tools">
