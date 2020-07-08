@@ -66,7 +66,7 @@ class QuestionController extends Controller
      */
     public function edit(Question $question)
     {
-        //
+        return view('pertanyaan.edit', compact('question'));
     }
 
     /**
@@ -78,7 +78,8 @@ class QuestionController extends Controller
      */
     public function update(Request $request, Question $question)
     {
-        //
+        $question->update($request->all());
+        return redirect()->action('QuestionController@index');
     }
 
     /**
@@ -89,6 +90,7 @@ class QuestionController extends Controller
      */
     public function destroy(Question $question)
     {
-        //
+        $question->delete();
+        return redirect()->route('questions.index');
     }
 }

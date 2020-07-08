@@ -13,9 +13,9 @@
         </div>
       <div class="card-tools">
         <button type="button" class="btn btn-tool" title="Edit">
-          <a href="/questions/{{ $question->id }}/edit"><i class="fas fa-edit"></i></a>
+          <a href="{{ route('questions.edit', $question->id) }}"><i class="fas fa-edit"></i></a>
         </button>
-        <form action="/questions/{{ $question->id }}" method="post" style="display: inline;">
+        <form action="{{ route('questions.destroy', $question->id) }}" method="post" style="display: inline;">
           @csrf
           @method('DELETE')
           <button type="submit" class="btn btn-tool text-danger" title="Delete">
@@ -36,10 +36,10 @@
     </div>
 
     <div class="card-footer">
-  		<button type="button" class="btn btn-default btn-sm">
+  		{{-- <button type="button" class="btn btn-default btn-sm">
         <i class="fas fa-comment-alt"></i> Komentar
-      </button>
-  		<a href="/questions/{{ $question->id }}" class="btn btn-default btn-sm"><i class="fas fa-pencil-alt"></i> Jawaban</a>
+      </button> --}}
+  		<a href="{{ route('questions.show', $question->id) }}" class="btn btn-default btn-sm"><i class="fas fa-pencil-alt"></i> Jawaban</a>
     </div>
 
   </div>
